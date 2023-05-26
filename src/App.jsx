@@ -10,8 +10,8 @@ function App() {
                 <Display/>
                 <div className={" m-2"}>
                 <div className={"grid grid-cols-4 gap-2 mt-3"}>
-                    <Button buttonLabel={"÷"}/>
-                    <Button buttonLabel={"x"}/>
+                    <Button buttonLabel={"/"}/>
+                    <Button buttonLabel={"×"}/>
                     <Button buttonLabel={"-"}/>
                     <Button buttonLabel={"+"}/>
                 </div>
@@ -24,14 +24,14 @@ function App() {
                         <Button buttonLabel={"4"} style={"gray"}/>
                         <Button buttonLabel={"5"} style={"gray"}/>
                         <Button buttonLabel={"6"} style={"gray"}/>
-                        <Button buttonLabel={"/"} style={"orange"}/>
+                        <Button buttonLabel={"%"} style={"orange"}/>
                         <Button buttonLabel={"1"} style={"gray"}/>
                         <Button buttonLabel={"2"} style={"gray"}/>
                         <Button buttonLabel={"3"} style={"gray"}/>
-                        <Button buttonLabel={"%"} style={"orange"}/>
-                        <Button buttonLabel={"0"} style={"gray"}/>
+                        <Button buttonLabel={"="} className={"row-span-2"} style={"orange"}/>
                         <Button buttonLabel={"."} style={"gray"}/>
-                        <Button buttonLabel={"="} className={"col-span-2"} style={"orange"}/>
+                        <Button buttonLabel={"0"} className={"col-span-2"} style={"gray"}/>
+
 
                     </div>
 
