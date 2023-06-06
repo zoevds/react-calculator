@@ -1,4 +1,4 @@
-import {createContext, useContext, useReducer} from 'react';
+import {createContext, useEffect, useContext, useReducer} from 'react';
 import {evaluate} from "mathjs";
 import PropTypes from "prop-types";
 
@@ -16,6 +16,15 @@ export function CalculatorProvider({children}) {
         calculatorReducer,
         initialCalculator
     );
+    const keydownHandler = (event) => {
+        if (Number(event.key) > 0) {
+            dispatch({type: 'input', input: event.key});
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener("keydown", keydownHandler)
+    }, [])
 
     return (
         <CalculatorContext.Provider value={event}>
@@ -45,10 +54,19 @@ function calculatorReducer(event, action) {
         case "clear": {
             return {...event, evaluationString: '', result: 0};
         }
-        case "evaluate":
-        {
-            const result = evaluate(event.evaluationString);
-            return {...event, evaluationString: '', result};
+        case "evaluate": {
+            return {
+                ...event,
+                evaluationString: '',
+                result: evaluate(event.evaluationString),
+                history: [
+                    ...event.history,
+                    {
+                        cal: `${event.evaluationString} = ${evaluate(event.evaluationString)}`,
+                    },
+                ],
+
+            };
         }
 
         default: {
