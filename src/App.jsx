@@ -1,16 +1,13 @@
-import {useEffect} from "react";
+
 import Display from "./components/Display.jsx";
 import {Button} from "./components/Button.jsx";
 import History from "./components/History.jsx";
-import {CalculatorProvider} from "./contexts/calculator.jsx";
+import {CalculatorProvider, useCalculatorDispatch} from "./contexts/calculator.jsx";
 import {createPortal} from "react-dom";
 
-const sidebarContentEl = document.querySelector('aside#history');
+const sidebarContentEl = document.querySelector('#history');
+
 function App() {
-
-    useEffect(() => {
-
-    }, [])
     return (
         <div className={"container max-w-sm mx-auto mt-28  "}>
             <div className={"w-full rounded-lg bg-black shadow-2xl p-2 my-2 shadow-slate-950 "}>
