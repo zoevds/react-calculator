@@ -27,6 +27,7 @@ export function Button(props) {
         }
         calculatorDispatch({ type: 'input', input });
     };
+
     return (
         <button onClick={() => handleButton(props.buttonLabel)}
             className={`font-bold text-black rounded-lg px-10 py-5 ${buttonStyles[props.style || 'normal']} ${props.className}`}>{props.buttonLabel}
