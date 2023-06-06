@@ -56,10 +56,3 @@ function calculatorReducer(event, action) {
         }
     }
 }
-
-
-
-
-
-
-
